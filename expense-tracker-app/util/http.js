@@ -4,8 +4,13 @@ import { ExpenseForm } from "../components/ManageExpense/ExpenseForm";
 BACKEND_URL =
   "https://expense-tracker-73e94-default-rtdb.europe-west1.firebasedatabase.app";
 
-export const storeExpense = (expenseData) => {
-  axios.post(BACKEND_URL + "/expenses.json", expenseData);
+export const storeExpense = async (expenseData) => {
+  const response = await axios.post(
+    BACKEND_URL + "/expenses.json",
+    expenseData
+  );
+  const id = response.data.name;
+  return id;
 };
 
 export async function fetchExpenses() {
