@@ -47,7 +47,6 @@ export const ExpenseForm = ({
     const descriptionIsValid = expenseData.description.trim().length > 0;
 
     if (!amountIsValid || !dateIsValid || !descriptionIsValid) {
-      //   Alert.alert("Invalid input", "Check your inputs");
       setInputs((curInputs) => {
         return {
           amount: {
